@@ -19,6 +19,12 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     age: {type: Number, required: true},
+    progress: {
+        module1: { type: String, enum: ["started", "inprogress", "completed"], },
+        module2: { type: String, enum: ["started", "inprogress", "completed"], },
+        module3: { type: String, enum: ["started", "inprogress", "completed"], },
+        module4: { type: String, enum: ["started", "inprogress", "completed"], }
+    },
 }, { timestamps: true });
 
 userSchema.pre("save", async function (next) {
