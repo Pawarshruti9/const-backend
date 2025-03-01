@@ -59,7 +59,7 @@ const changeStatusInprogress = catchAsyncError(async (req, res, next) => {
         {course = "module4"}
     const user = await User.findById(req.user.id);
 
-    if (user.progress[course] = "completed"){
+    if (user.progress[course] === "completed"){
         return res.json({
             quizId,
             message: "You have already completed"

@@ -5,8 +5,8 @@ import {changeStatusInprogress, changeStatusStarted, getResult } from "../contro
 const router = Router();
 
 //route to get the result of the test,pass testid and ueranswers in the body
-router.route("/asses").post(isAuthenticatedUser,getResult);
-router.route("/statusinprogress").post(isAuthenticatedUser,changeStatusInprogress);
-router.route("/statusstarted").post(isAuthenticatedUser,changeStatusStarted);
+router.route("/asses").post(isAuthenticatedUser,getResult); // quiz
+router.route("/statusinprogress").post(isAuthenticatedUser,changeStatusInprogress); //finish button
+router.route("/statusstarted").post(isAuthenticatedUser,changeStatusStarted); //startbutton
 
 export default router;
